@@ -209,6 +209,7 @@ A single PrayerUpdate object with all its details
 
 
 
+
 # Group Comments
 PrayerUpdateComment related resources of the **PrayerUpdateComment API**
 
@@ -316,3 +317,69 @@ A comment object with all of its details
 
 
 
+
+
+
+
+
+
+# Group AccountPrayed
+AccountPrayed API is a resource to add and view a record of people who have prayed for a prayer update.
+
+## AccountPrayed Collection [/api/prayer/updates/1/accountprayers]
+### List all AccountPrayed objects for a PrayerUpdate [GET]
+
++ Request (application/json)
+
+    + Header
+
+            Cookie: PHPSESSID=g89b82eti4oeu6v0c05rq8qng5
+            Accept: application/json
+
++ Response 200 (application/json)
+
+        {"total": 1, "limit": 10, "data": [
+            {
+                "id": 5,
+                "prayerUpdate": {
+                    "id": 46
+                },
+                "account": {
+                    "id": 245,
+                    "firstName": "Nathan",
+                    "lastName": "O'Hanlon",
+                    "facebook_id": 718469082
+                },
+                "prayerCount": 3,
+                "createdAt": "2014-07-10T11:40:22+0000"
+            }
+        ]}
+
+### Create a AccountPrayed object [POST]
+
++ Request (application/json)
+
+    + Header
+
+            Cookie: PHPSESSID=g89b82eti4oeu6v0c05rq8qng5
+            Accept: application/json
+
++ Response 204
+
+## AccountPrayed [/api/prayer/updates/1/accountprayers/{id}]
+A single AccountPrayed object for deletion
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the AccountPrayed to perform action with. Has example value.
+
+
+### Remove a AccountPrayed object [DELETE]
+
++ Request (application/json)
+
+    + Header
+
+            Cookie: PHPSESSID=g89b82eti4oeu6v0c05rq8qng5
+            Accept: application/json
+
++ Response 204
