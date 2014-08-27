@@ -212,7 +212,7 @@ A single PrayerUpdate object with all its details
 # Group Comments
 PrayerUpdateComment related resources of the **PrayerUpdateComment API**
 
-## Comments Collection [/api/prayer/updates/1/comments]
+## Comments Collection [/app_test.php/api/prayer/updates/2/comments]
 ### List all Comments for a PrayerUpdate [GET]
 + Request (application/json)
 
@@ -223,18 +223,30 @@ PrayerUpdateComment related resources of the **PrayerUpdateComment API**
 
 + Response 200 (application/json)
 
-        {"total": 1, "limit": 10, "data": [
+        {"total": 2, "limit": 10, "data": [
             {
-                "id": 18,
+                "id": 2,
                 "account": {
-                    "id": 245,
+                    "id": 1,
                     "firstName": "Nathan",
                     "lastName": "O'Hanlon",
                     "facebook_id": 718469082
                 },
                 "prayerUpdate": {},
-                "content": "A comment against the first update",
-                "createdAt": "2014-07-10T11:40:22+0000"
+                "content": "Second test prayer comment",
+                "createdAt": "2014-08-26T11:26:35+0000"
+            },
+            {
+                "id": 1,
+                "account": {
+                    "id": 1,
+                    "firstName": "Nathan",
+                    "lastName": "O'Hanlon",
+                    "facebook_id": 718469082
+                },
+                "prayerUpdate": {},
+                "content": "First test prayer comment",
+                "createdAt": "2014-08-26T11:26:35+0000"
             }
         ]}
 
@@ -261,7 +273,7 @@ PrayerUpdateComment related resources of the **PrayerUpdateComment API**
             }
         }, "comment": "A new comment for prayer update 1", "createdAt": "2014-07-09T11:10:01+0000"}
 
-## Comment [/api/prayer/updates/1/comments/{id}]
+## Comment [/app_test.php/api/prayer/updates/1/comments/{id}]
 A comment object with all of its details
 
 + Parameters
