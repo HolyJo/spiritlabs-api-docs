@@ -774,27 +774,26 @@ A single PrayerTodayCard object with all its details
 
 + Response 200 (application/json)
 
-        {"id": 2, "account": {
-            "id": 285,
-            "firstName": "Nathan",
-            "lastName": "O'Hanlon",
-            "facebook_id": 718469082
-        }, "prayerUpdate": {
-            "id": 50,
-            "content": "Some test prayer update",
-            "comments": [
-                {
-                    "id": 21,
-                    "account": {
-                        "id": 285,
-                        "firstName": "Nathan",
-                        "lastName": "O'Hanlon",
-                        "facebook_id": 718469082
-                    },
-                    "content": "A comment against the first update",
-                    "createdAt": "2014-07-14T15:40:02+0000"
-                }
-            ],
-            "createdAt": "2014-07-14T15:40:02+0000"
-        }, "isGivable": false, "type": "prayer_update"}
+        {
+            "id": 1,
+            "account": {
+                "id": 1,
+                "firstName": "Nathan",
+                "lastName": "O'Hanlon",
+                "facebook_id": 718469082
+            },
+            "prayerBlock": {
+                "id": 1,
+                "text": "Do not judge, or you too will be judged. For in the same way you judge others, you will be judged, and with the measure you use, it will be measured to you.",
+                "prayerUpdate": false,
+                "bookName": "Matthew",
+                "chapterFrom": 7,
+                "chapterTo": 7,
+                "verseFrom": 1,
+                "verseTo": 2
+            }, 
+            "isGivable": false,
+            "type": "bible",
+            "baseType": "prayer_block"
+        }
 
