@@ -397,7 +397,7 @@ A single AccountPrayed object for deletion
 # Group AccountPrayed - Prayer Block
 AccountPrayed - Prayer Blcok API is a resource to add and view a record of people who have prayed for a prayer block of which there are 4 types: (Bible, News, Person or Reminder).
 
-## AccountPrayed Collection [/app_test.php/api/prayer/blocks/2/accountprayers]
+## AccountPrayed Collection [/app_test.php/api/prayer/blocks/1/accountprayers]
 ### List all AccountPrayed objects for a Prayer Block [GET]
 
 + Request (application/json)
@@ -409,33 +409,29 @@ AccountPrayed - Prayer Blcok API is a resource to add and view a record of peopl
 
 + Response 200 (application/json)
 
-        {
-            "total": 1,
-            "limit": 10,
-            "data": [
-                {
-                    "id": 9,
-                    "account": {
-                        "id": 1,
-                        "firstName": "Nathan",
-                        "lastName": "O'Hanlon",
-                        "facebook_id": 718469082
-                    },
-                    "prayerCount": 1,
-                    "createdAt": "2014-08-27T13:57:52+0000",
-                    "prayerBlockBase": {
-                        "id": 2,
-                        "text": "Ask and it will be given to you; seek and you will find; knock and the door will be opened to you.",
-                        "prayerUpdate": false,
-                        "bookName": "Matthew",
-                        "chapterFrom": 7,
-                        "chapterTo": 7,
-                        "verseFrom": 7,
-                        "verseTo": 7
-                    }
+        {"total": 1, "limit": 10, "data": [
+            {
+                "id": 4,
+                "account": {
+                    "id": 1,
+                    "firstName": "Nathan",
+                    "lastName": "O'Hanlon",
+                    "facebook_id": 718469082
+                },
+                "prayerCount": 3,
+                "createdAt": "2014-08-27T13:43:35+0000",
+                "prayerBlockBase": {
+                    "id": 1,
+                    "text": "Do not judge, or you too will be judged. For in the same way you judge others, you will be judged, and with the measure you use, it will be measured to you.",
+                    "prayerUpdate": false,
+                    "bookName": "Matthew",
+                    "chapterFrom": 7,
+                    "chapterTo": 7,
+                    "verseFrom": 1,
+                    "verseTo": 2
                 }
-            ]
-        }
+            }
+        ]}
 
 ### Create a AccountPrayed object [POST]
 
@@ -448,11 +444,11 @@ AccountPrayed - Prayer Blcok API is a resource to add and view a record of peopl
 
 + Response 204
 
-## AccountPrayed [/app_test.php/api/prayer/blocks/2/accountprayers/{id}]
+## AccountPrayed [/app_test.php/api/prayer/blocks/1/accountprayers/{id}]
 A single AccountPrayed object for deletion
 
 + Parameters
-    + id (required, number, `9`) ... Numeric `id` of the AccountPrayed to perform action with. Has example value.
+    + id (required, number, `4`) ... Numeric `id` of the AccountPrayed to perform action with. Has example value.
 
 ### Remove a AccountPrayed object [DELETE]
 
