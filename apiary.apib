@@ -384,3 +384,169 @@ A single AccountPrayed object for deletion
             Accept: application/json
 
 + Response 204
+
+
+
+
+
+
+
+
+
+
+# Group PrayerTodayCard
+PrayerTodayCard API retreives the PrayerTodayCards associated with a logged in account for a given day.
+
+## PrayerTodayCard Collection [/app_test.php/api/prayer/todays]
+### List all PrayerTodayCard objects for logged in account [GET]
+
++ Request (application/json)
+
+    + Header
+
+            Cookie: PHPSESSID=g89b82eti4oeu6v0c05rq8qng5
+            Accept: application/json
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 4,
+                "account": {
+                    "id": 285,
+                    "firstName": "Nathan",
+                    "lastName": "O'Hanlon",
+                    "facebook_id": 718469082
+                },
+                "organisation": {
+                    "name": "Tearfund",
+                    "countryCode": "GB",
+                    "createdAt": "2013-07-14T15:39:58+0000",
+                    "updatedAt": "2014-07-14T15:39:58+0000",
+                    "isActive": true
+                },
+                "isGivable": false,
+                "type": "organisation"
+            },
+            {
+                "id": 3,
+                "account": {
+                    "id": 285,
+                    "firstName": "Nathan",
+                    "lastName": "O'Hanlon",
+                    "facebook_id": 718469082
+                },
+                "project": {
+                    "id": 212,
+                    "name": "'Older brother\/sister' mentors for HIV+ children",
+                    "summary": "The vision for this project is to train up and equip young adults to become 'big brothers or sisters' to mentor HIV+ children in need.",
+                    "thankYou": "raise up and and train 20 older brothers and sisters to mentor HIV+ children in Cambodia.",
+                    "goalAmount": 460,
+                    "raisedAmount": 0,
+                    "colour": "47878E",
+                    "countryEffectedCode": "KH",
+                    "isChurch": false,
+                    "organisation": {
+                        "name": "Tearfund",
+                        "countryCode": "GB",
+                        "createdAt": "2013-07-14T15:39:58+0000",
+                        "updatedAt": "2014-07-14T15:39:58+0000",
+                        "isActive": true
+                    },
+                    "game": {},
+                    "created": "2014-07-14T15:39:58+0000",
+                    "updatedAt": "2014-07-14T15:39:58+0000"
+                },
+                "isGivable": false,
+                "type": "project"
+            },
+            {
+                "id": 2,
+                "account": {
+                    "id": 285,
+                    "firstName": "Nathan",
+                    "lastName": "O'Hanlon",
+                    "facebook_id": 718469082
+                },
+                "prayer_update": {
+                    "id": 50,
+                    "content": "Some test prayer update",
+                    "comments": [
+                        {
+                            "id": 21,
+                            "account": {
+                                "id": 285,
+                                "firstName": "Nathan",
+                                "lastName": "O'Hanlon",
+                                "facebook_id": 718469082
+                            },
+                            "content": "A comment against the first update",
+                            "createdAt": "2014-07-14T15:40:02+0000"
+                        }
+                    ],
+                    "createdAt": "2014-07-14T15:40:02+0000"
+                },
+                "isGivable": false,
+                "type": "prayer_update"
+            },
+            {
+                "id": 1,
+                "account": {
+                    "id": 285,
+                    "firstName": "Nathan",
+                    "lastName": "O'Hanlon",
+                    "facebook_id": 718469082
+                },
+                "prayerBlock": {
+                    "id": 5,
+                    "bookName": "Matthew",
+                    "chapterFrom": 7,
+                    "chapterTo": 7,
+                    "verseFrom": 1,
+                    "verseTo": 2
+                },
+                "isGivable": false,
+                "type": "devotional",
+                "text": "Prayer Update Text here"
+            }
+        ]
+
+## Single PrayerTodayCard [/api/prayer/todays/{id}]
+A single PrayerTodayCard object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the PrayerTodayCard to perform action with. Has example value.
+
+### Retrieve a single PrayerUpdateCard [GET]
++ Request (application/json)
+
+    + Header
+
+            Cookie: PHPSESSID=g89b82eti4oeu6v0c05rq8qng5
+
++ Response 200 (application/json)
+
+        {"id": 2, "account": {
+            "id": 285,
+            "firstName": "Nathan",
+            "lastName": "O'Hanlon",
+            "facebook_id": 718469082
+        }, "prayerUpdate": {
+            "id": 50,
+            "content": "Some test prayer update",
+            "comments": [
+                {
+                    "id": 21,
+                    "account": {
+                        "id": 285,
+                        "firstName": "Nathan",
+                        "lastName": "O'Hanlon",
+                        "facebook_id": 718469082
+                    },
+                    "content": "A comment against the first update",
+                    "createdAt": "2014-07-14T15:40:02+0000"
+                }
+            ],
+            "createdAt": "2014-07-14T15:40:02+0000"
+        }, "isGivable": false, "type": "prayer_update"}
+
