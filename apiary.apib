@@ -260,19 +260,24 @@ PrayerUpdateComment related resources of the **PrayerUpdateComment API**
             
     + Body
     
-            { "content": "A new comment for prayer update 1" }
+            { "content": "A new comment for prayer update 2" }
 
 + Response 200 (application/json)
 
-        {"id": 17, "account": {
+        {
+          "id": 3,
+          "account": {
             "id": 1
-        }, "prayerUpdate": {
-            "id": 1,
+          },
+          "prayerUpdate": {
+            "id": 2,
             "account": {
-                "id": 1
+              "id": 1
             }
-        }, "comment": "A new comment for prayer update 1", "createdAt": "2014-07-09T11:10:01+0000"}
-
+          },
+          "content": "A new comment for prayer update 2",
+          "createdAt": "2014-08-27T08:00:10+0000"
+        }
 ## Comment [/app_test.php/api/prayer/updates/1/comments/{id}]
 A comment object with all of its details
 
