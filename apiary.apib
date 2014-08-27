@@ -324,7 +324,7 @@ A comment object with all of its details
 
 
 
-# Group AccountPrayed
+# Group AccountPrayed - Prayer Update
 AccountPrayed API is a resource to add and view a record of people who have prayed for a prayer update.
 
 ## AccountPrayed Collection [/app_test.php/api/prayer/updates/2/accountprayers]
@@ -372,6 +372,87 @@ A single AccountPrayed object for deletion
 
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the AccountPrayed to perform action with. Has example value.
+
+
+### Remove a AccountPrayed object [DELETE]
+
++ Request (application/json)
+
+    + Header
+
+            Cookie: PHPSESSID=g89b82eti4oeu6v0c05rq8qng5
+            Accept: application/json
+
++ Response 204
+
+
+
+
+
+
+
+
+
+
+# Group AccountPrayed - Prayer Block
+AccountPrayed - Prayer Blcok API is a resource to add and view a record of people who have prayed for a prayer block of which there are 4 types: (Bible, News, Person or Reminder).
+
+## AccountPrayed Collection [/app_test.php/api/prayer/blocks/2/accountprayers]
+### List all AccountPrayed objects for a Prayer Block [GET]
+
++ Request (application/json)
+
+    + Header
+
+            Cookie: PHPSESSID=g89b82eti4oeu6v0c05rq8qng5
+            Accept: application/json
+
++ Response 200 (application/json)
+
+        {
+            "total": 1,
+            "limit": 10,
+            "data": [
+                {
+                    "id": 4,
+                    "account": {
+                        "id": 1,
+                        "firstName": "Nathan",
+                        "lastName": "O'Hanlon",
+                        "facebook_id": 718469082
+                    },
+                    "prayerCount": 3,
+                    "createdAt": "2014-08-27T11:34:19+0000",
+                    "prayerBlockBase": {
+                        "id": 1,
+                        "text": "Do not judge, or you too will be judged. For in the same way you judge others, you will be judged, and with the measure you use, it will be measured to you.",
+                        "prayerUpdate": false,
+                        "bookName": "Matthew",
+                        "chapterFrom": 7,
+                        "chapterTo": 7,
+                        "verseFrom": 1,
+                        "verseTo": 2
+                    }
+                }
+            ]
+        }
+
+### Create a AccountPrayed object [POST]
+
++ Request (application/json)
+
+    + Header
+
+            Cookie: PHPSESSID=g89b82eti4oeu6v0c05rq8qng5
+            Accept: application/json
+
++ Response 204
+
+## AccountPrayed [/app_test.php/api/prayer/block/1/accountprayers/{id}]
+A single AccountPrayed object for deletion
+
++ Parameters
+    + id (required, number, `4`) ... Numeric `id` of the AccountPrayed to perform action with. Has example value.
 
 
 ### Remove a AccountPrayed object [DELETE]
@@ -796,4 +877,14 @@ A single PrayerTodayCard object with all its details
             "type": "bible",
             "baseType": "prayer_block"
         }
+
+
+
+
+
+
+
+
+
+
 
