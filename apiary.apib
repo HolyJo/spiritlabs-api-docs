@@ -288,15 +288,14 @@ A comment object with all of its details
 ### Retrieve a Comment [GET]
 + Response 200 (application/json)
 
-    + Header
-
-            Cookie: PHPSESSID=g89b82eti4oeu6v0c05rq8qng5
-
-    + Body
-
-            {"id": 18,"prayerUpdate": {
-                "id": 46
-            }, "content": "A comment against the first update", "createdAt": "2014-07-10T11:40:22+0000"}
+        {
+            "id": 2,
+            "prayerUpdate": {
+                "id": 2
+            },
+            "content": "Second test prayer comment",
+            "createdAt": "2014-07-10T11:40:22+0000"
+        }
 
 ### Update a Comment [PATCH]
 + Request (application/json)
