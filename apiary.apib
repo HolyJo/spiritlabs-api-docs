@@ -200,3 +200,102 @@ A single PrayerUpdate object with all its details
 
 ### Remove a PrayerUpdate [DELETE]
 + Response 204 (text/plain; charset=UTF-8)
+
+
+
+
+
+
+
+
+
+# Group Comments
+PrayerUpdateComment related resources of the **PrayerUpdateComment API**
+
+## Comments Collection [/api/prayer/updates/1/comments]
+### List all Comments for a PrayerUpdate [GET]
++ Request (application/json)
+
+    + Header
+
+            Cookie: PHPSESSID=g89b82eti4oeu6v0c05rq8qng5
+            Accept: application/json
+
++ Response 200 (application/json)
+
+        {"total": 1, "limit": 10, "data": [
+            {
+                "id": 18,
+                "account": {
+                    "id": 245,
+                    "firstName": "Nathan",
+                    "lastName": "O'Hanlon",
+                    "facebook_id": 718469082
+                },
+                "prayerUpdate": {},
+                "content": "A comment against the first update",
+                "createdAt": "2014-07-10T11:40:22+0000"
+            }
+        ]}
+
+### Create a Comment [POST]
++ Request (application/json)
+
+    + Header
+
+            Cookie: PHPSESSID=g89b82eti4oeu6v0c05rq8qng5
+            Accept: application/json
+            
+    + Body
+    
+            { "content": "A new comment for prayer update 1" }
+
++ Response 200 (application/json)
+
+        {"id": 17, "account": {
+            "id": 1
+        }, "prayerUpdate": {
+            "id": 1,
+            "account": {
+                "id": 1
+            }
+        }, "comment": "A new comment for prayer update 1", "createdAt": "2014-07-09T11:10:01+0000"}
+
+## Comment [/api/prayer/updates/1/comments/{id}]
+A comment object with all of its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Comment to perform action with. Has example value.
+
+### Retrieve a Comment [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            Cookie: PHPSESSID=g89b82eti4oeu6v0c05rq8qng5
+
+    + Body
+
+            {"id": 18,"prayerUpdate": {
+                "id": 46
+            }, "content": "A comment against the first update", "createdAt": "2014-07-10T11:40:22+0000"}
+
+### Update a Comment [PATCH]
++ Request (application/json)
+
+    + Header
+    
+            Cookie: PHPSESSID=g89b82eti4oeu6v0c05rq8qng5
+
+    + Body
+    
+            { "op": "replace", "path": "content", "value": "An updated comment for prayer update 1" }
+
++ Response 204
+
+### Remove a Comment [DELETE]
++ Response 204
+
+
+
+
