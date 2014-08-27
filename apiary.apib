@@ -547,6 +547,94 @@ A single AccountPrayed object for deletion
 
 
 
+# Group AccountPrayed - Project
+AccountPrayed - Prayer Block API is a resource to add and view a record of people who have prayed for a Project.
+
+## AccountPrayed Collection [/app_test.php/api/prayer/projects/1/accountprayers]
+### List all AccountPrayed objects for a Prayer Block [GET]
+
++ Request (application/json)
+
+    + Header
+
+            Cookie: PHPSESSID=g89b82eti4oeu6v0c05rq8qng5
+            Accept: application/json
+
++ Response 200 (application/json)
+
+        {
+            "total": 1,
+            "limit": 10, 
+            "data": [
+                {
+                    "id": 9,
+                    "account": {
+                        "id": 1,
+                        "firstName": "Nathan",
+                        "lastName": "O'Hanlon",
+                        "facebook_id": 718469082
+                    },
+                    "prayerCount": 3,
+                    "createdAt": "2014-08-27T14:32:35+0000",
+                    "project": {
+                        "id": 1,
+                        "name": "'Older brother\/sister' mentors for HIV+ children",
+                        "summary": "The vision for this project is to train up and equip young adults to become 'big brothers or sisters' to mentor HIV+ children in need.",
+                        "goalAmount": 460,
+                        "raisedAmount": 0
+                    }
+                }
+            ]
+        }
+
+### Create a AccountPrayed object [POST]
+
++ Request (application/json)
+
+    + Header
+
+            Cookie: PHPSESSID=g89b82eti4oeu6v0c05rq8qng5
+            Accept: application/json
+
++ Response 204
+
+## AccountPrayed [/app_test.php/api/prayer/projects/1/accountprayers/{id}]
+A single AccountPrayed object for deletion
+
++ Parameters
+    + id (required, number, `7`) ... Numeric `id` of the AccountPrayed to perform action with. Has example value.
+
+
+### Remove a AccountPrayed object [DELETE]
+
++ Request (application/json)
+
+    + Header
+
+            Cookie: PHPSESSID=g89b82eti4oeu6v0c05rq8qng5
+            Accept: application/json
+
++ Response 204
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Group PrayerTodayCard
 PrayerTodayCard API retreives the PrayerTodayCards associated with a logged in account for a given day.
