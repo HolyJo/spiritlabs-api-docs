@@ -618,14 +618,88 @@ A single AccountPrayed object for deletion
 
 
 
+# Group QuietTime
+QuietTime API retreives detail on a grouping of PrayerTodayCards, with a name and later an author.
 
+## QuietTime Collection [/app_test.php/api/prayer/quiettimes]
+### List all QuietTime objects [GET]
 
++ Request (application/json)
 
+    + Header
+    
+            Cookie: PHPSESSID=g89b82eti4oeu6v0c05rq8qng5
+            Accept: application/json
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
+                "name": "Saint Pauls Reflections",
+                "prayerTodayCardCount": 12,
+                "organisation": {
+                    "id": 9,
+                    "name": "St Paul's Shadwell"
+                }
+            },
+            {
+                "id": 2,
+                "name": "Stopping Poverty",
+                "prayerTodayCardCount": 12,
+                "organisation": {
+                    "id": 1,
+                    "name": "Tearfund"
+                }
+            }
+        ]
+
+## Single QuietTime [/app_test.php/api/prayer/quiettimes/{id}]
+A single QuietTime object with all its details
+
++ Parameters
+
+    + id (required, number, `1`) ... Numeric `id` of the QuietTime to perform action with. Has example value.
+
+### Retrieve a single QuietTime [GET]
++ Request (application/json)
+
+    + Header
+
+            Cookie: PHPSESSID=g89b82eti4oeu6v0c05rq8qng5
+
++ Response 200 (application/json)
+
+        {
+        
+            "id": 1,
+            "name": "Saint Pauls Reflections",
+            "prayerTodayCardCount": 12,
+            "organisation": {
+                "id": 9,
+                "name": "St Paul's Shadwell",
+                "countryCode": "GB",
+                "colour": "38373E",
+                "createdAt": "2014-09-30T14:45:23+0000",
+                "updatedAt": "2014-09-30T14:45:23+0000",
+                "isActive": true
+            },
+            "adminAccount": {
+                "id": 1
+            }
+        
+        }
 
 # Group PrayerTodayCard
 PrayerTodayCard API retreives the PrayerTodayCards associated with a logged in account for a given day.
 
-## PrayerTodayCard Collection [/app_test.php/api/prayer/todays]
+## PrayerTodayCard Collection [/app_test.php/api/prayer/quiettime/{quiettime_id}/todays]
+
++ Parameters
+
+    + quiettime_id (required, number, `1`) ... Numeric `id` of the QuietTime to perform action with. Has example value.
+
+
 ### List all PrayerTodayCard objects for logged in account [GET]
 
 + Request (application/json)
@@ -978,10 +1052,12 @@ PrayerTodayCard API retreives the PrayerTodayCards associated with a logged in a
             }
         ]
 
-## Single PrayerTodayCard [/app_test.php/api/prayer/todays/{id}]
+## Single PrayerTodayCard [/app_test.php/api/prayer/quiettimes/{quiettime_id}/todays/{id}]
 A single PrayerTodayCard object with all its details
 
 + Parameters
+
+    + quiettime_id (required, number, `1`) ... Numeric `id` of the QuietTime which the prayerTodayCard is within. Has example value.
     + id (required, number, `1`) ... Numeric `id` of the PrayerTodayCard to perform action with. Has example value.
 
 ### Retrieve a single PrayerUpdateCard [GET]
@@ -1015,14 +1091,4 @@ A single PrayerTodayCard object with all its details
             "type": "bible",
             "baseType": "prayer_block"
         }
-
-
-
-
-
-
-
-
-
-
 
