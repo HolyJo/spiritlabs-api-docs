@@ -550,7 +550,7 @@ AccountPrayed - Prayer Blcok API is a resource to add and view a record of peopl
 A single AccountPrayed object for deletion
 
 + Parameters
-    + id (required, number, `5`) ... Numeric `id` of the AccountPrayed to perform action with. Has example value.
+    + id (required, number, `6`) ... Numeric `id` of the AccountPrayed to perform action with. Has example value.
 
 ### Remove a AccountPrayed object [DELETE]
 
@@ -1179,5 +1179,35 @@ A single PrayerTodayCard object with all its details
             "isGivable": false,
             "type": "bible",
             "baseType": "prayer_block"
+        }
+
+
+## PrayerUpdateCards prayers [/app_test.php/api/prayer/quiettimes/{quiettime_id}/todays/{id}/prayers]
+
++ Parameters
+
+    + quiettime_id (required, number, `1`) ... Numeric `id` of the QuietTime which the prayerTodayCard is within. Has example value.
+    + id (required, number, `2`) ... Numeric `id` of the PrayerTodayCard to perform action with. Has example value.
+
+### Retrieve a today cards prayers [GET]
++ Request (application/json)
+
+    + Header
+
+            Cookie: PHPSESSID=g89b82eti4oeu6v0c05rq8qng5
+
++ Response 200 (application/json)
+
+        {
+            "total": 1,
+            "data": [
+                {
+                    "id": 2,
+                    "account": {"id": 2, "firstName": "Rupert", "lastName": "Edwards", "facebook_id": 34650},
+                    "prayerCount": 2,
+                    "createdAt": "2014-10-02T13:56:34+0000",
+                    "prayerUpdate": {}
+                }
+            ]
         }
 
