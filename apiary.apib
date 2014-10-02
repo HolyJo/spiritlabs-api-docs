@@ -4,6 +4,71 @@ HOST: http://local.lepton.co
 # SpiritLabs API
 The SpiritLabs API allows prayer and giving on this Lepton and Prayer platform.
 
+# Group Account
+The account is the logged in end user, but this API will not fail when they are logged out, as often defaults are allowed.
+
+## Account Details [/app_test.php/api/account]
+The detail about an account, which still works if not logged in.
+
+### Retreive Account [GET]
++ Request (application/json)
+
+    + Header
+            
+            Cookie: PHPSESSID=suf8n31ca43dc4ne5h38ok0da5
+
++ Response 200 (application/json)
+
+        {
+            "isLoggedIn": true,
+            "account": {
+                "id": 1,
+                "email": "nathan+42@eit.co.nz",
+                "firstName": "Nathan",
+                "lastName": "O'Hanlon",
+                "enabled": true,
+                "prayer_card_collection_code": {},
+                "facebook_id": 718469082
+            }
+        }
+
+
+## Accounts Current Quiet Time [/app_test.php/api/account/quiettime]
+A Quiet Time holds Prayer Today Cards. Each has a prayerCountForAccount number that tells us how many times this user has prayed for a Prayer Today Card.
+This view of the Quiet Time is minimal and only focusses on parts specific to the currently logged in account.
+
+### Retrieve QuietTimes Prayer Detail [GET]
++ Request (application/json)
+
+    + Header
+
+            Cookie: PHPSESSID=suf8n31ca43dc4ne5h38ok0da5
+
++ Response 200 (application/json)
+
+        {
+            "id": 1,
+            "name": "Saint Pauls Reflections",
+            "prayerTodayCards": [
+                {"id": 1, "prayerCountForAccount": 0},
+                {"id": 2, "prayerCountForAccount": 0},
+                {"id": 3, "prayerCountForAccount": 0},
+                {"id": 4, "prayerCountForAccount": 0},
+                {"id": 5, "prayerCountForAccount": 0},
+                {"id": 6, "prayerCountForAccount": 0},
+                {"id": 7, "prayerCountForAccount": 0},
+                {"id": 8, "prayerCountForAccount": 0},
+                {"id": 9, "prayerCountForAccount": 0},
+                {"id": 10, "prayerCountForAccount": 0},
+                {"id": 11, "prayerCountForAccount": 0},
+                {"id": 12, "prayerCountForAccount": 0}
+            ],
+            "prayerTodayCardCount": 12,
+            "organisation": {"id": 9, "name": "St Paul's Shadwell"},
+            "adminAccount": {"id": 1}
+        }
+
+
 # Group Prayer Updates
 PrayerUpdates can be made for many types of resource, including accounts, organisations, churches, bible readings, etc.
 
