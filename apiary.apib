@@ -328,16 +328,36 @@ PrayerUpdateComment related resources of the **PrayerUpdateComment API**
 + Response 200 (application/json)
 
         {
-            "id": 3,
-            "account": {
-                "id": 1
-            },
-            "prayerUpdate": {
-                "id": 2
-            },
-            "content": "A new comment for prayer update 2",
-            "createdAt": "2014-10-02T16:36:31+0000"
+            "total": 2,
+            "limit": 10,
+            "data": [
+                {
+                    "id": 2,
+                    "account": {
+                        "id": 1,
+                        "firstName": "Nathan",
+                        "lastName": "O'Hanlon",
+                        "facebook_id": 718469082
+                    },
+                    "prayerUpdate": {},
+                    "content": "Second test prayer comment",
+                    "createdAt": "2014-10-02T13:56:34+0000"
+                },
+                {
+                    "id": 1,
+                    "account": {
+                        "id": 1,
+                        "firstName": "Nathan",
+                        "lastName": "O'Hanlon",
+                        "facebook_id": 718469082
+                    },
+                    "prayerUpdate": {},
+                    "content": "First test prayer comment",
+                    "createdAt": "2014-10-02T13:56:34+0000"
+                }
+            ]
         }
+
 
 ### Create a Comment [POST]
 + Request (application/json)
